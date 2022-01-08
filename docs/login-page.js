@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "Aleyna" && password === "29") {
+    if (username === "Aleyna" || username == "aleyna" && password === "29") {
         // If the credentials are valid, show an alert box and reload the page
         alert("İlk oda sorusu: Size gönderilen karttaki yazıda hangi harf eksiktir?");
         location.reload();
