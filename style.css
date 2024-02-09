@@ -1,41 +1,42 @@
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: linear-gradient(135deg, #9d50bb, #ff6000); /* Purple and orange gradient */
+    background: linear-gradient(135deg, #9d50bb, #ff6000); /* Enhanced purple and orange gradient */
     color: #333;
+    background-size: 400% 400%;
+    animation: GradientAnimation 15s ease infinite;
 }
 
-header {
-    background: rgba(255, 255, 255, 0.75); /* Semi-transparent white for a glass effect */
+@keyframes GradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+header, section {
+    background: rgba(255, 255, 255, 0.85); /* More pronounced semi-transparent white for a glass effect */
     color: #fff;
     padding: 20px;
     text-align: center;
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(5px); /* Blur effect behind the card */
-    margin: 20px auto; /* Centering the header */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+    backdrop-filter: blur(10px); /* Increased blur effect behind the card */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Adding a subtle border for more depth */
+    margin: 20px auto; /* Centering */
     max-width: 95%;
 }
 
-header a {
-    color: #ff6000; /* Orange color for links */
+header a, section a {
+    color: #ff6000; /* Orange color for links, ensuring consistency */
     text-decoration: none;
-}
-
-section {
-    background: rgba(255, 255, 255, 0.75); /* Semi-transparent white for a glass effect */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(5px); /* Blur effect behind the card */
-    margin: 20px auto; /* Centering sections */
-    max-width: 95%;
+    text-shadow: 0 0 8px #fff; /* Text glow effect for links */
 }
 
 h2, h3 {
     color: #9d50bb; /* Purple color for headers */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Text glow for headers */
 }
 
 ul {
@@ -45,4 +46,17 @@ ul {
 
 li {
     margin-bottom: 10px;
+}
+
+/* Adding a reflective shine effect to the header and sections */
+header::before, section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent);
+    z-index: 2;
+    border-radius: 10px;
 }
